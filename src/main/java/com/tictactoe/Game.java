@@ -40,7 +40,7 @@ public class Game {
         return false;
     }
 
-    private byte doPC() {
+    private byte calculatingPCStroke() {
         while (true) {
             byte random = (byte) (Math.random() * (9 - 1 + 1) + 1);
             if (gameField.isGameFieldAvaliable(((byte) (random - 1)))) {
@@ -56,7 +56,7 @@ public class Game {
     }
 
     private boolean playPCAndCheckResult() {
-        byte random = doPC();
+        byte random = calculatingPCStroke();
         gameField.fillGameField((byte) (random - 1), 'O');
         return gameField.checkFinalCombination('O');
     }
